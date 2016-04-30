@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
 
 
     }
-	
+
 	private void showTip(final String str) {
 		info.setText(str);
 		info.show();

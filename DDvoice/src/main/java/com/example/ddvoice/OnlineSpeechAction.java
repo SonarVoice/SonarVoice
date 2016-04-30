@@ -3,10 +3,13 @@ package com.example.ddvoice;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -60,60 +63,61 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                 url=null,text=null,time=null,date=null,city=null,sourceName=null,target=null,source=null;
         public static String[] weatherDate=null,weather=null,tempRange=null,airQuality=null,wind=null,humidity=null,windLevel=null;
 
-        private TextUnderstander mTextUnderstander;// 语义理解对象（文本到语义）。
+        private TextUnderstander mTextUnderstander;// ??????????????????澹??
         private ListView mListView;
         private ArrayList<SiriListItem> list;
         ChatMsgViewAdapter mAdapter;
         private MediaPlayer player;
-        public static  String SRResult="";	//识别结果
-        private static String SAResult="";//语义识别结果
+        public static  String SaveResult="";
+        public static  String SRResult="";	//?????
+        private static String SAResult="";//?????????
         private static String TAG = MainActivity.class.getSimpleName();
-        //Toast提示消息
+        //Toast??????
         private Toast info;
-        //文本区域
+        //???????
         private TextView textView;
-        //语音识别
+        //???????
         private SpeechRecognizer mIat;
-        // 语音听写UI
+        // ??????写UI
         private RecognizerDialog mIatDialog;
-        // 用HashMap存储听写结果
+        // ??HashMap?娲??写???
         private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
-        // 引擎类型
+        // ????????
         private String mEngineType = SpeechConstant.TYPE_CLOUD;
         private String mEngineTypeTTS = SpeechConstant.TYPE_CLOUD;
         private SharedPreferences mSharedPreferences;
         private SharedPreferences mSharedPreferencesTTS;
         MainActivity mActivity = new MainActivity();
-        //语音识别监听器
+        //????????????
         private RecognizerListener recognizerListener = new RecognizerListener() {
             public void onBeginOfSpeech() {
 
             }
             public void onError(SpeechError error) {
-                speak("没有听到您说话。", false);
+                speak("????????????", false,ctx);
                 showTip(error.getPlainDescription(true));
             }
             public void onEndOfSpeech() {
-                showTip("结束说话");
+                showTip("???????");
 
             }
             public void onResult(RecognizerResult results, boolean isLast) {
                 //Log.d("dd", results.getResultString());
                 printResult(results,isLast);
                 if (isLast) {
-                    // TODO 最后的结果
+                    // TODO ??????
                 }
             }
             public void onVolumeChanged(int volume,byte[] data) {
-               showTip("请对着麦克风讲话，音量为："+volume);
-                //info.makeText(getApplicationContext(), "当前正在说话，音量大小：" + volume, 100).show();
+               showTip("????????缃???????????"+volume);
+                //info.makeText(getApplicationContext(), "??????????????????小??" + volume, 100).show();
             }
             public void onEvent(int eventType, int arg1, int arg2, Bundle obj) {
 
             }
         };
         /**
-         * 初始化监听器。
+         * ?????????????
          */
         private InitListener mInitListener = new InitListener() {
 
@@ -121,18 +125,18 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
             public void onInit(int code) {
                 Log.d(TAG, "SpeechRecognizer init() code = " + code);
                 if (code != ErrorCode.SUCCESS) {
-                   showTip("初始化失败，错误码"+code);
+                   showTip("???????????????"+code);
                 }
             }
         };
 
-        //初始化监听器（文本到语义）。
+        //?????????????????????澹??
         private InitListener textUnderstanderListener = new InitListener() {
             public void onInit(int code) {
                 Log.d(TAG, "textUnderstanderListener init() code = " + code);
                 if (code != ErrorCode.SUCCESS) {
-                    //showTip("初始化失败,错误码："+code);
-                    Log.d("dd","初始化失败,错误码："+code);
+                    //showTip("????????,??????"+code);
+                    Log.d("dd","????????,??????"+code);
                 }
             }
         };
@@ -153,7 +157,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
             if(result==null){
             }else{
-                //必须要初始化数组不然会有得不到任何结果的问题
+                //?????????????椴????械貌????魏谓???????
                 airQuality=new String[10];
                 weatherDate=new String[10];
                 wind=new String[10];
@@ -203,117 +207,126 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
         } catch (JSONException e) {
             // TODO Auto-generated catch block
-            speak("解析json数据有问题",false);
+            speak("????json?????????",false,ctx);
             e.printStackTrace();
         }
             SonarReaction();
     }
 
         public void SonarReaction(){
-            SRResult=null;//置空
+            SRResult=null;//???
             SAResult=null;
             //speak("service:"+service+" operation:"+operation,false);
             //speak("serviceFlag",serviceFlag);
-            if(serviceFlag==false){//如果不在一项服务中才进行服务的判断
-                //speak("判断服务类型",false);
-                switch(service){
+            if(serviceFlag==false) {//????????????胁???蟹?????卸?
+                //speak("?卸????????",false);
+                switch (service) {
 
 
-                    case "telephone":{//1 电话相关服务
+                    case "telephone": {//1 ?缁??????
 
-                        switch(operation){
+                        switch (operation) {
 
-                            case "CALL":{
-                                CallAction callAction=new CallAction(name,code,ctx,this);
+                            case "CALL": {
+                                CallAction callAction = new CallAction(name, code, ctx, this);
                                 callAction.start();
                             }
 
-                            case "VIEW":{	//查看电话拨打记录
-                                //必要条件无
-                                //可选条件【未接电话】【已拨电话】【已接电话】
-                             break;
+                            case "VIEW": {    //???缁??????
+                                //?????????
+                                //?????????未??缁????????缁???????缁??
+                                break;
                             }
 
-                            default :break;
+                            default:
+                                break;
 
                         }
 
                         break;
                     }
 
-                    case "message":{//2 短信相关服务
+                    case "message": {//2 ??????????
 
-                        switch(operation){
+                        switch (operation) {
 
-                            case "SEND":{//发送短信
+                            case "SEND": {//???????
+                                Bundle bundle = new Bundle();
+                                bundle.putSerializable("Name",name);
+                                Intent intent = new Intent(ctx,MassageEditActivity.class);
+                                intent.putExtras(bundle);
+                                ctx.startActivity(intent);
                                 break;
                             }
 
-                            case "VIEW":{//查看发送短信页面
+                            case "VIEW": {//????????????
 
 
                                 break;
                             }
 
 
-
-                            case "SENDCONTACTS":{//发送名片,目前只能识别：名字发给名字
+                            case "SENDCONTACTS": {//???????,???????????????????
 
                                 break;
                             }
-                            default :break;
+                            default:
+                                break;
                         }
 
                         break;
                     }
 
-                    case "app":{//3 应用相关服务
+                    case "app": {//3 ?????????
 
-                        switch(operation){
+                        switch (operation) {
 
-                            case "LAUNCH":{//打开应用
-
-                                break;
-                            }
-
-                            case "QUERY":{//应用中心搜索应用
+                            case "LAUNCH": {//?????
 
                                 break;
                             }
 
-                            default:break;
+                            case "QUERY": {//??????????????
+
+                                break;
+                            }
+
+                            default:
+                                break;
 
                         }
                         break;
                     }
 
-                    case "website":{//4 网站相关服务
+                    case "website": {//4 ?????????
 
-                        switch(operation){
+                        switch (operation) {
 
-                            case "OPEN":{//打开指定网址
+                            case "OPEN": {//????????
 
 
                                 break;
                             }
 
-                            default:break;
+                            default:
+                                break;
                         }
 
                         break;
                     }
 
-                    case "websearch":{//5 搜索相关服务
+                    case "websearch": {//5 ??????????
 
-                        switch(operation){
+                        switch (operation) {
 
-                            case "QUERY":{//搜索
+                            case "QUERY": {//????
 
 
                                 break;
                             }
 
-                            default:break;
+                            default:
+                                break;
 
                         }
 
@@ -321,145 +334,374 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                         break;
                     }
 
-                    case "faq":{//6 社区问答相关服务
+                    case "faq": {//6 ?????????????
 
-                        switch(operation){
+                        switch (operation) {
 
-                            case "ANSWER":{//社区问答
-
+                            case "ANSWER": {//???????
 
 
                                 break;
                             }
 
-                            default:break;
+                            default:
+                                break;
                         }
 
                         break;
                     }
 
-                    case "chat":{//7 聊天相关服务
+                    case "chat": {//7 ??????????
 
-                        switch(operation){
+                        switch (operation) {
 
-                            case "ANSWER":{//聊天模式
+                            case "ANSWER": {//??????
+                                Log.v("wifi", text);
+                                String[] Function = getParagraph(SaveResult);
+                                WifiManager wifiManager = (WifiManager) ctx
+                                        .getSystemService(Context.WIFI_SERVICE);
+                                for (int i = 0; i < Function.length; i++) {
+                                    if ((i + 1) < Function.length) {
+                                        String GetNews = Function[i] + Function[i + 1];
+                                        switch (GetNews) {
+                                            case "打开":
+                                                for (int n = 0; n < Function.length; n++) {
+                                                    if ((n + 3) < Function.length) {
+                                                        String keyword = Function[n] + Function[n + 1] + Function[n + 2] + Function[n + 3];
+                                                        if (keyword.equals("wifi")) {
+                                                            Log.v("wifiTest", "wifiIn");
+                                                            wifiManager.setWifiEnabled(true);
+                                                            Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                                                            ctx.startActivity(intent);
+                                                        }
+                                                    }
+                                                }
+                                                break;
+                                            case "关闭":
+                                                for (int n = 0; n < Function.length; n++) {
+                                                    if ((n + 3) < Function.length) {
+                                                        String keyword = Function[n] + Function[n + 1] + Function[n + 2] + Function[n + 3];
+                                                        if (keyword.equals("wifi")) {
+                                                            Log.v("keyword", "in");
+                                                            wifiManager.setWifiEnabled(false);
+                                                        }
+                                                    }
+                                                }
+                                                break;
 
+                                        }
+                                    }
+                                }
 
+                                        break;
+                                    }
+
+                                    default:
+                                        break;
+                                }
 
                                 break;
                             }
 
-                            default:break;
+                            case "openQA": {//8 ?????????????
+
+                                switch (operation) {
+
+                                    case "ANSWER": {//???????
+
+                                        OpenQA openQA = new OpenQA(text,ctx,this);
+                                        openQA.start();
+
+                                        break;
+                                    }
+
+                                    default:
+                                        break;
+                                }
+
+                                break;
+                            }
+
+                            case "baike": {//9 ???????????
+
+                                switch (operation) {
+
+                                    case "ANSWER": {//???
+
+
+                                        break;
+                                    }
+
+                                    default:
+                                        break;
+                                }
+
+                                break;
+                            }
+
+                            case "schedule": {//10 ?????????
+
+                                switch (operation) {
+
+                                    case "CREATE": {//???????/????(????????????????)
+
+
+                                        break;
+                                    }
+
+                                    case "VIEW": {//??????/????(未???)
+
+
+                                        break;
+                                    }
+
+
+                                    default:
+                                        break;
+                                }
+
+                                break;
+                            }
+
+                            case "weather": {//11 ??????????
+
+                                switch (operation) {
+
+                                    case "QUERY": {//???????
+
+
+                                        break;
+                                    }
+
+                                    default:
+                                        break;
+
+                                }
+
+                                break;
+                            }
+
+                            case "translation": {//12 ??????????
+
+                                switch (operation) {
+
+                                    case "TRANSLATION": {//????
+
+
+                                        break;
+                                    }
+
+                                    default:
+                                        break;
+
+                                }
+
+                                break;
+                            }
+
+                            default: {
+                                String VoiceTag = "null";
+                                try {
+                                    JSONObject JSONNews = new JSONObject(SaveResult);
+                                    String FunctionText = JSONNews.getString("text");
+                                    String[] Function = getParagraph(FunctionText);
+                                    WifiManager wifiManager = (WifiManager) ctx.getSystemService(Context.WIFI_SERVICE);
+                                    for (int i = 0; i < Function.length; i++) {
+                                        Log.v("i",String.valueOf(i));
+                                        if ((i + 1) < Function.length) {
+                                            String GetNews = Function[i] + Function[i + 1];
+                                            switch (GetNews) {
+                                                case "新闻":
+                                                    for (int n = 0; n < Function.length; n++) {
+                                                        if ((n + 1) < Function.length) {
+                                                            String keyword = Function[n] + Function[n + 1];
+                                                            VoiceTag = "N";
+                                                            switch (keyword) {
+                                                                case "社会":
+                                                                    VoiceTag = "N1";
+                                                                    Jump("http://apis.baidu.com/txapi/social/social");
+                                                                    break;
+                                                                case "国际":
+                                                                    VoiceTag = "N2";
+                                                                    Jump("http://apis.baidu.com/txapi/world/world");
+                                                                    break;
+                                                                case "体育":
+                                                                    VoiceTag = "N3";
+                                                                    Jump("http://apis.baidu.com/txapi/tiyu/tiyu");
+                                                                    break;
+                                                                default:
+                                                                    break;
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+
+                                                case "亮度":
+                                                    for (int n = 0; n < Function.length; n++) {
+                                                        if ((n + 1) < Function.length) {
+                                                            BrightnessAction brightnessAction = new BrightnessAction(ctx);
+                                                            String keyword = Function[n] + Function[n + 1];
+                                                            int BrightnessNow = brightnessAction.screenBrightness_check();
+                                                            switch (keyword) {
+                                                                case "增大":
+                                                                    VoiceTag = "B1";
+                                                                    int increase = BrightnessNow + 52;
+                                                                    brightnessAction.setScreenBritness(increase);
+                                                                    break;
+                                                                case "降低":
+                                                                    VoiceTag = "B2";
+                                                                    int lower = BrightnessNow - 52;
+                                                                    brightnessAction.setScreenBritness(lower);
+                                                                    break;
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+
+                                                case "音量":
+                                                    for (int n = 0; n < Function.length; n++) {
+                                                        if ((n + 1) < Function.length) {
+                                                            String keyword = Function[n] + Function[n + 1];
+                                                            switch (keyword) {
+                                                                case "媒体":
+                                                                    for (int m = 0; m < Function.length; m++) {
+
+                                                                        if ((m + 1) < Function.length) {
+                                                                            String keywordType = Function[m] + Function[m + 1];
+                                                                            if (keywordType.equals("增大")) {
+                                                                                VoiceTag = "S1";
+                                                                                ChangeVolume(
+                                                                                        AudioManager.STREAM_MUSIC,
+                                                                                        AudioManager.ADJUST_RAISE,
+                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            } else if (keywordType.equals("降低")) {
+                                                                                VoiceTag = "S2";
+                                                                                ChangeVolume(
+                                                                                        AudioManager.STREAM_MUSIC,
+                                                                                        AudioManager.ADJUST_LOWER,
+                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    break;
+                                                                case "提示":
+                                                                    for (int m = 0; m < Function.length; m++) {
+                                                                        if ((m + 1) < Function.length) {
+                                                                            String keywordType = Function[m] + Function[m + 1];
+                                                                            if (keywordType.equals("增大")) {
+                                                                                VoiceTag = "S3";
+                                                                                ChangeVolume(
+                                                                                        AudioManager.STREAM_ALARM,
+                                                                                        AudioManager.ADJUST_RAISE,
+                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            } else if (keywordType.equals("降低")) {
+                                                                                VoiceTag = "S4";
+                                                                                ChangeVolume(
+                                                                                        AudioManager.STREAM_ALARM,
+                                                                                        AudioManager.ADJUST_LOWER,
+                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            }
+                                                                        }
+                                                                    }
+
+                                                                    break;
+                                                                case "铃声":
+                                                                    for (int m = 0; m < Function.length; m++) {
+                                                                        if ((m + 1) < Function.length) {
+                                                                            String keywordType = Function[m] + Function[m + 1];
+                                                                            if (keywordType.equals("增大")) {
+                                                                                VoiceTag = "S5";
+                                                                                ChangeVolume(
+                                                                                        AudioManager.STREAM_RING,
+                                                                                        AudioManager.ADJUST_RAISE,
+                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            } else if (keywordType.equals("降低")) {
+                                                                                VoiceTag = "S6";
+                                                                                ChangeVolume(
+                                                                                        AudioManager.STREAM_RING,
+                                                                                        AudioManager.ADJUST_LOWER,
+                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    break;
+                                                                case "通话":
+                                                                    for (int m = 0; m < Function.length; m++) {
+                                                                        if ((m + 1) < Function.length) {
+                                                                            String keywordType = Function[m] + Function[m + 1];
+                                                                            if (keywordType.equals("增大")) {
+                                                                                VoiceTag = "S7";
+                                                                                ChangeVolume(
+                                                                                        AudioManager.STREAM_VOICE_CALL,
+                                                                                        AudioManager.ADJUST_RAISE,
+                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            } else if (keywordType.equals("降低")) {
+                                                                                VoiceTag = "S8";
+                                                                                ChangeVolume(
+                                                                                        AudioManager.STREAM_VOICE_CALL,
+                                                                                        AudioManager.ADJUST_LOWER,
+                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    break;
+                                                            }
+                                                        }
+                                                    }
+                                                    break;
+                                                default:
+                                                    break;
+
+                                            }
+                                        }else {
+                                            Log.v("ininini",VoiceTag);
+                                            Log.v("i + 1",String.valueOf(i + 1));
+                                            Log.v("Function.length",String.valueOf(Function.length));
+                                            if(VoiceTag.equals("null") && (i + 1) == Function.length){
+                                                Log.v("ininini","in");
+                                                speak("不知道您要干嘛，不过我想过一段时间我就会懂了。", false,ctx);
+                                                VoiceTag = "";
+
+                                            }
+                                        }
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                break;
+                            }
                         }
-
-                        break;
-                    }
-
-                    case "openQA":{//8 智能问答相关服务
-
-                        switch(operation){
-
-                            case "ANSWER":{//智能问答
-
-                                OpenQA openQA = new OpenQA(text,this);
-                                openQA.start();
-
-                                break;
-                            }
-
-                            default:break;
-                        }
-
-                        break;
-                    }
-
-                    case "baike":{//9 百科知识相关服务
-
-                        switch(operation){
-
-                            case "ANSWER":{//百科
-
-
-
-                                break;
-                            }
-
-                            default:break;
-                        }
-
-                        break;
-                    }
-
-                    case "schedule":{//10 日程相关服务
-
-                        switch(operation){
-
-                            case "CREATE":{//创建日程/闹钟(直接跳转相应设置界面)
-
-
-
-                                break;
-                            }
-
-                            case "VIEW":{//查看闹钟/日历(未实现)
-
-
-                                break;
-                            }
-
-
-                            default:break;
-                        }
-
-                        break;
-                    }
-
-                    case "weather":{//11 天气相关服务
-
-                        switch(operation){
-
-                            case "QUERY":{//查询天气
-
-
-
-                                break;
-                            }
-
-                            default:break;
-
-                        }
-
-                        break;
-                    }
-
-                    case "translation":{//12 翻译相关服务
-
-                        switch(operation){
-
-                            case "TRANSLATION":{//翻译
-
-
-
-                                break;
-                            }
-
-                            default:break;
-
-                        }
-
-                        break;
-                    }
-
-                    default:{
-                        speak("不知道您要干嘛，不过我想过一段时间我就会懂了。",false);
-                        break;
-                    }
+                    }//??????????????
                 }
-            }//结束某项服务才跳出
+
+    public void ChangeVolume(int streamType,int direction,int flages){
+        AudioManager mAudioManager = (AudioManager) ctx.getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager.adjustStreamVolume(streamType, direction, flages);
+    }
+
+    public String[] getParagraph(String inputString) {
+        char[] temp = new char[inputString.length()];
+        temp = inputString.toCharArray();
+        String[] paragraph = new String[temp.length];
+        for (int i = 0; i < inputString.length(); i++) {
+            paragraph[i] = String.valueOf(temp[i]);
         }
-        public void initIflytek(){//初始讯飞设置
+        return paragraph;
+    }
+
+    public  void Jump(String Url){
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Url",Url);
+        Intent intent = new Intent(ctx ,NewsActivity.class);
+        intent.putExtras(bundle);
+        ctx.startActivity(intent);
+    }
+
+
+
+        public void initIflytek(){//??????????
             Activity activity = (Activity)ctx;
-            //找到Siri开关
+            //???Siri????
 
 
             activity.findViewById(R.id.voice_input).setOnClickListener(this);
@@ -467,7 +709,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
     }
 
-    public void initUI(){//初始化UI和参数
+    public void initUI(){//?????UI?????
         SRResult="";
         list = new ArrayList<SiriListItem>();
         if(ctx instanceof MainActivity) {
@@ -482,44 +724,44 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
         activity.registerForContextMenu(mListView);
     }
 
-    public void speechRecognition(){//初始化
-        //1.创建SpeechRecognizer对象，第二个参数： 本地听写时传InitListener
+    public void speechRecognition(){//?????
+        //1.????SpeechRecognizer???????????? ??????写???InitListener
         mIat= SpeechRecognizer.createRecognizer(ctx, mInitListener);
-        // 初始化听写Dialog，如果只使用有UI听写功能，无需创建SpeechRecognizer
+        // ???????写Dialog???????????UI??写????????璐??SpeechRecognizer
         mIatDialog = new RecognizerDialog(ctx, mInitListener);
-        //语义分析初始化
+        //????????????
         mTextUnderstander = TextUnderstander.createTextUnderstander(ctx, textUnderstanderListener);
 
-        // 初始化合成对象
+        // ???????????
         mTts = SpeechSynthesizer.createSynthesizer(ctx, mTtsInitListener);
     }
 
-    public void startSpeenchRecognition(){//语音识别
+    public void startSpeenchRecognition(){//???????
         player = MediaPlayer.create(ctx, R.raw.begin);
         player.start();
-        // 显示听写对话框
+        // ?????写?????
         mIatDialog.setListener(recognizerDialogListener);
         //mIatDialog.show();
         ret = mIat.startListening(recognizerListener);
         if (ret != ErrorCode.SUCCESS) {
             Log.d(TAG, "" + ret);
-            showTip("听写失败，错误码：" + ret);
-            //info.makeText(getApplicationContext(), "听写失败,错误码：" + ret, 100).show();
+            showTip("??写??????????" + ret);
+            //info.makeText(getApplicationContext(), "??写???,??????" + ret, 100).show();
         }
 
     }
 
-    //语音识别结果监听器
+    //??????????????
     private RecognizerDialogListener recognizerDialogListener = new RecognizerDialogListener() {
         public void onResult(RecognizerResult results, boolean isLast) {
-            printResult(results,isLast);//得到识别结果
+            printResult(results,isLast);//????????
         }
 
         /**
-         * 识别回调错误.
+         * ?????????.
          */
         public void onError(SpeechError error) {
-            speak(error.getPlainDescription(true),true);
+            speak(error.getPlainDescription(true),true,ctx);
             info.makeText(ctx.getApplicationContext(), "error.getPlainDescription(true)", 1000).show();
             //showTip(error.getPlainDescription(true));
         }
@@ -528,25 +770,25 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
 
 
-    //开始语义分析
+    //??????????
     private void startAnalysis(){
 
         mTextUnderstander.setParameter(SpeechConstant.DOMAIN,  "iat");
         if(mTextUnderstander.isUnderstanding()){
             mTextUnderstander.cancel();
-            //showTip("取消");
-            Log.d("dd","取消");
+            //showTip("???");
+            Log.d("dd","???");
         }else {
-            //SRResult="明天会下雨吗？";
+            //SRResult="???????????";
             ret = mTextUnderstander.understandText(SRResult, textListener);
             if(ret != 0)
             {
-                //showTip("语义理解失败,错误码:"+ ret);
-                Log.d("dd","语义理解失败,错误码:"+ ret);
+                //showTip("??????????,??????:"+ ret);
+                Log.d("dd","??????????,??????:"+ ret);
             }
         }
     }
-    //识别回调
+    //?????
     private TextUnderstanderListener textListener = new TextUnderstanderListener() {
 
         public void onResult(final UnderstanderResult result) {
@@ -555,15 +797,16 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
                 public void run() {
                     if (null != result) {
-                        // 显示
-                        //Log.d(TAG, "understander result：" + result.getResultString());
+                        // ???
+                        //Log.d(TAG, "understander result??" + result.getResultString());
                         String text = result.getResultString();
                         SAResult = text;
+                        SaveResult = SAResult;
                         Log.d("dd", "SAResult:" + SAResult);
 
                         if (TextUtils.isEmpty(text)) {
                             //Log.d("dd", "understander result:null");
-                            //showTip("识别结果不正确。");
+                            //showTip("??????????");
                         }
                         //mainActivity.speak();
                         //speak(SAResult,false);
@@ -574,19 +817,19 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
 
 
-					/*private void dialogueManagement(int mainServiceID,int branchServiceID) {//对话管理器
+					/*private void dialogueManagement(int mainServiceID,int branchServiceID) {//?????????
 						// TODO Auto-generated method stub
 						if(mainServiceID==1){
-							if(branchServiceID==1){//进入了打电话服务，必要条件是【电话号码】,可选条件有【号码归属地】【运营商】【号段】【尾号】，
-								//可由多个可选条件确定必要条件
+							if(branchServiceID==1){//???????缁??????????????缁????,????????小???????????????????????巍???尾?????
+								//???????????????????????
 
 							}
-							if(branchServiceID==2){//进入了查看电话播放记录
+							if(branchServiceID==2){//????????缁??????
 
 							}
 
 						}
-						if(mainServiceID==2){//进入了发短信服务，必要条件是电话号码和短信内容
+						if(mainServiceID==2){//??????????????????????缁????????????
 
 						}
 					}*/
@@ -594,13 +837,13 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
         }
 
         public void onError(SpeechError error) {
-            //showTip("onError Code："	+ error.getErrorCode());
-            Log.d("dd","onError Code："	+ error.getErrorCode());
+            //showTip("onError Code??"	+ error.getErrorCode());
+            Log.d("dd","onError Code??"	+ error.getErrorCode());
         }
     };
 
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){//重写onActivityResult
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){//??写onActivityResult
         if(requestCode == 0){
             //System.out.println("REQUESTCODE equal");
             if(resultCode == 0){
@@ -617,7 +860,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
         //Log.d("dd","text:"+text);
         String sn = null;
-        // 读取json结果中的sn字段
+        // ???json????械?sn???
         try {
             JSONObject resultJson = new JSONObject(results.getResultString());
             Log.d("dd","json:"+results.getResultString());
@@ -634,55 +877,55 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
         }
         SRResult=resultBuffer.toString();
         if(isLast==true){
-            speak(SRResult, true);
-            //加入数据库
+            speak(SRResult, true,ctx);
+            //????????
 
             startAnalysis();
 		/*startSemanticAnalysis();*/
         }
     }
 
-    int ret = 0; // 函数调用返回值
+    int ret = 0; // ??????梅????
 
     @SuppressWarnings("static-access")
     @Override
-    public void onClick(View view) {//语音识别过程
+    public void onClick(View view) {//?????????
 
 
         startSpeenchRecognition();
     }
 
     public void setParam(){
-        // 清空参数
+        // ??????
         mIat.setParameter(SpeechConstant.PARAMS, null);
 
-        // 设置听写引擎
+        // ??????写????
         mIat.setParameter(SpeechConstant.ENGINE_TYPE, mEngineType);
-        // 设置返回结果格式
+        // ???梅???????
         mIat.setParameter(SpeechConstant.RESULT_TYPE, "json");
 
         String lag = mSharedPreferences.getString("iat_language_preference",
                 "mandarin");
         if (lag.equals("en_us")) {
-            // 设置语言
+            // ????????
             mIat.setParameter(SpeechConstant.LANGUAGE, "en_us");
         } else {
-            // 设置语言
+            // ????????
             mIat.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
-            // 设置语言区域
+            // ????????????
             mIat.setParameter(SpeechConstant.ACCENT, lag);
         }
-        // 设置语音前端点
+        // ????????????
         mIat.setParameter(SpeechConstant.VAD_BOS, mSharedPreferences.getString("iat_vadbos_preference", "4000"));
-        // 设置语音后端点
+        // ????????????
         mIat.setParameter(SpeechConstant.VAD_EOS, mSharedPreferences.getString("iat_vadeos_preference", "1000"));
-        // 设置标点符号
+        // ????????
         mIat.setParameter(SpeechConstant.ASR_PTT, mSharedPreferences.getString("iat_punc_preference", "1"));
-        // 设置音频保存路径
+        // ???????????路??
         mIat.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory()
                 + "/iflytek/wavaudio.pcm");
-        // 设置听写结果是否结果动态修正，为“1”则在听写过程中动态递增地返回结果，否则只在听写结束之后返回最终结果
-        // 注：该参数暂时只对在线听写有效
+        // ??????写????????????????1????????写????卸?????????????????????写??????????????
+        // ????貌???????????????写??效
         mIat.setParameter(SpeechConstant.ASR_DWA, mSharedPreferences.getString("iat_dwa_preference", "0"));
     }
     @Override
@@ -693,48 +936,48 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
 
     /**
-     * 初始化监听。
+     * ?????????
      */
     private InitListener mTtsInitListener = new InitListener() {
 
         public void onInit(int code) {
             Log.d(TAG, "InitListener init() code = " + code);
             if (code != ErrorCode.SUCCESS) {
-               showTip("初始化失败，错误码："+code);
+               showTip("???????????????"+code);
             } else {
-                // 初始化成功，之后可以调用startSpeaking方法
-                // 注：有的开发者在onCreate方法中创建完合成对象之后马上就调用startSpeaking进行合成，
-                // 正确的做法是将onCreate中的startSpeaking调用移至这里
+                // ???????????????????startSpeaking????
+                // ????械????????onCreate?????写?????????????????????startSpeaking???泻???
+                // ????????????onCreate?械?startSpeaking????????????
             }
         }
     };
 
 
     private void setParamTTS(){
-        // 清空参数
+        // ??????
         mTts.setParameter(SpeechConstant.PARAMS, null);
-        //设置合成
+        //???煤??
         if(mEngineTypeTTS.equals(SpeechConstant.TYPE_CLOUD)) {
             mTts.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD);
-            //设置发音人
+            //???梅?????
             mTts.setParameter(SpeechConstant.VOICE_NAME,voicer);
-            //设置语速
+            //????????
             //mTts.setParameter(SpeechConstant.SPEED,mSharedPreferencesTTS.getString("speed_preference", "50"));
-            //设置音调
+            //????????
             //mTts.setParameter(SpeechConstant.PITCH,mSharedPreferencesTTS.getString("pitch_preference", "50"));
-            //设置音量
+            //????????
             //mTts.setParameter(SpeechConstant.VOLUME,mSharedPreferencesTTS.getString("volume_preference", "50"));
-            //设置播放器音频流类型
+            //???貌??????????????
             //mTts.setParameter(SpeechConstant.STREAM_TYPE,mSharedPreferencesTTS.getString("stream_preference", "3"));
         }else {
             mTts.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_LOCAL);
-            //设置发音人 voicer为空默认通过语音+界面指定发音人。
+            //???梅????? voicer?????????????+??????????????
             mTts.setParameter(SpeechConstant.VOICE_NAME, "");
         }
     }
 
     /**
-     * 合成回调监听。
+     * ?????????
      */
     private SynthesizerListener mTtsListener = new SynthesizerListener() {
 
@@ -743,18 +986,18 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
 
         public void onSpeakPaused() {
-            showTip("暂停播放");
+            showTip("???????");
         }
 
 
         public void onSpeakResumed() {
-            showTip("继续播放");
+            showTip("?????");
         }
 
 
         public void onBufferProgress(int percent, int beginPos, int endPos,
                                      String info) {
-            // 合成进度
+            // ?????
             //mPercentForBuffering = percent;
             //showTip(String.format(getString(R.string.tts_toast_format),
             //	mPercentForBuffering, mPercentForPlaying));
@@ -762,7 +1005,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
 
         public void onSpeakProgress(int percent, int beginPos, int endPos) {
-            // 播放进度
+            // ??????
             //mPercentForPlaying = percent;
             //showTip(String.format(getString(R.string.tts_toast_format),
             //	mPercentForBuffering, mPercentForPlaying));
@@ -782,20 +1025,24 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
         }
     };
 
-    private void textToSpeach(String text){//语音合成
+    private void textToSpeach(String text){//???????
 
-        // 设置参数
+        // ???貌???
         setParamTTS();
         int code = mTts.startSpeaking(text, mTtsListener);
         if (code != ErrorCode.SUCCESS) {
-           showTip("语音合成失败，错误码："+code);
+           showTip("?????????????????"+code);
         }
     }
 
 
     //from SiriCN
-    public void speak(String msg, boolean isSiri) {
-        addToList(msg, isSiri);//添加到对话列表
+    public void speak(String msg, boolean isSiri,Context context) {
+        Activity activityContext = (Activity)context;
+        if(!(activityContext instanceof PhoneCallActivity) && !(activityContext instanceof MassageEditActivity)) {
+            Log.v("INININININI","AIAIAIA");
+            addToList(msg, isSiri);//????????斜?
+        }
         if(isSiri==false){
             textToSpeach(msg);
         }
@@ -809,6 +1056,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
     private void addToList(String msg, boolean isSiri) {
         //
+        Log.v("msg",String.valueOf(isSiri));
         list.add(new SiriListItem(msg, isSiri));
         mAdapter.notifyDataSetChanged();
         mListView.setSelection(list.size() - 1);

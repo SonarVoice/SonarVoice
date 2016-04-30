@@ -20,11 +20,11 @@ public final class R {
 		public static final int ic_launcher = 0x7f020066;
 	}
 	public static final class id {
-		public static final int view_expandable_contentLayout = 0x7f0c0073;
-		public static final int view_expandable_headerlayout = 0x7f0c0072;
+		public static final int view_expandable_contentLayout = 0x7f0c0096;
+		public static final int view_expandable_headerlayout = 0x7f0c0095;
 	}
 	public static final class layout {
-		public static final int view_expandable = 0x7f030028;
+		public static final int view_expandable = 0x7f030035;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f06000e;

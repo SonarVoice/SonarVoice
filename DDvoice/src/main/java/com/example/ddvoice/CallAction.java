@@ -44,12 +44,20 @@ public class CallAction {
 	};
 	
 	public CallAction(String person,String code,Context context , OnlineSpeechAction vbutton)
-	  {
-	    mPerson = person;
-		  this.ctx = context;
-	    number=code;
+	{
+		mPerson = person;
+		this.ctx = context;
+		number=code;
 		this.onlineSpeechAction = vbutton;
-	  }
+	}
+
+	public CallAction(String person,String code,Context context )
+	{
+		mPerson = person;
+		this.ctx = context;
+		number=code;
+	}
+
 	public void start()//打电话
 	  {
 		if((number==null)||(number.equals(""))){
@@ -72,16 +80,24 @@ public class CallAction {
 						 if (GetPinYinName.equals(GetFuzzyPinYin) && phoneId.size() > 0) {
 							 Long PhoneNum = GainPhoneNum(phoneId.get(i), ctx);
 							 number = String.valueOf(PhoneNum);
-							 if(number == null)
-							 {
-								 onlineSpeechAction.speak("没有在通讯录中找到"+mPerson+"的号码。", false);
+							 if (onlineSpeechAction != null) {
+								 if (number == null) {
+									 onlineSpeechAction.speak("没有在通讯录中找到" + mPerson + "的号码。", false,ctx);
+								 } else {
+									 //打电话
+									 onlineSpeechAction.speak("即将拨给" + mPerson + "...", false,ctx);
+									 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+									 ctx.startActivity(intent);
+								 }
 							 }else{
-								 //打电话
-								 onlineSpeechAction.speak("即将拨给"+mPerson+"...", false);
-								 Intent intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:" + number));
-								 ctx.startActivity(intent);
-							 }
+								 if (number == null) {
 
+								 } else {
+									 //打电话
+									 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+									 ctx.startActivity(intent);
+								 }
+							 }
 						 }
 					 }
 				 }
@@ -89,7 +105,7 @@ public class CallAction {
 			    }
 		}
 		else{
-			onlineSpeechAction.speak("即将拨给"+number+"...", false);
+			onlineSpeechAction.speak("即将拨给"+number+"...", false,ctx);
        	 	Intent intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:" + number));    
 	        ctx.startActivity(intent);
 			 
@@ -192,7 +208,7 @@ public class CallAction {
 						+ key + "%'", null, null); // Sort order.
 		String[] SearchName = new String[cursor.getCount()];
 		if (cursor == null) {
-			onlineSpeechAction.speak("没有搜索到该联系人", false);
+			onlineSpeechAction.speak("没有搜索到该联系人", false,ctx);
 		}
 		for (int i = 0; i < cursor.getCount(); i++) {
 			cursor.moveToPosition(i);
