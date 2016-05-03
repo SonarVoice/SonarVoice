@@ -46,16 +46,21 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import android.content.Context;
 import com.example.ddvoice.MainActivity;
+import com.example.ddvoice.SetTopBox;
 /**
  * Created by jf on 4/18/2016.
  */
 public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.OnClickListener {
         private Context ctx;
     private LocationService locationService;
-        public OnlineSpeechAction(Context context){
-            ctx = context;
-            info=Toast.makeText(ctx, "", Toast.LENGTH_SHORT);
+    public OnlineSpeechAction(Context context){
+        ctx = context;
+        info=Toast.makeText(ctx, "", Toast.LENGTH_SHORT);
+        if(setTopBox == null){
+            setTopBox = new SetTopBox();
+            setTopBox.openSocket();
         }
+    }
         private SpeechSynthesizer mTts;
         private String voicer="xiaoyan";
 
@@ -66,7 +71,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                 url=null,text=null,time=null,date=null,city=null,sourceName=null,target=null,source=null;
         public static String[] weatherDate=null,weather=null,tempRange=null,airQuality=null,wind=null,humidity=null,windLevel=null;
 
-        private TextUnderstander mTextUnderstander;// ??????????????????å£??
+        private TextUnderstander mTextUnderstander;// ??????????????????ï¿??
         private ListView mListView;
         private ArrayList<SiriListItem> list;
         ChatMsgViewAdapter mAdapter;
@@ -83,7 +88,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
         private SpeechRecognizer mIat;
         // ??????Ð´UI
         private RecognizerDialog mIatDialog;
-        // ??HashMap?æ´??Ð´???
+        // ??HashMap?ï¿??Ð´???
         private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
         // ????????
         private String mEngineType = SpeechConstant.TYPE_CLOUD;
@@ -114,7 +119,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                 }
             }
             public void onVolumeChanged(int volume,byte[] data) {
-               showTip("????????ç½???????????"+volume);
+               showTip("????????ï¿???????????"+volume);
                 //info.makeText(getApplicationContext(), "??????????????????Ð¡??" + volume, 100).show();
             }
             public void onEvent(int eventType, int arg1, int arg2, Bundle obj) {
@@ -135,7 +140,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
             }
         };
 
-        //?????????????????????å£??
+        //?????????????????????ï¿??
         private InitListener textUnderstanderListener = new InitListener() {
             public void onInit(int code) {
                 Log.d(TAG, "textUnderstanderListener init() code = " + code);
@@ -162,7 +167,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
             if(result==null){
             }else{
-                //?????????????é²????ÐµÃ²????ÎºÎ½???????
+                //?????????????ï¿????ÐµÃ²????ÎºÎ½???????
                 airQuality=new String[10];
                 weatherDate=new String[10];
                 wind=new String[10];
@@ -228,7 +233,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                 switch (service) {
 
 
-                    case "telephone": {//1 ?ç»??????
+                    case "telephone": {//1 ?ï¿??????
 
                         switch (operation) {
 
@@ -237,9 +242,9 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                 callAction.start();
                             }
 
-                            case "VIEW": {    //???ç»??????
+                            case "VIEW": {    //???ï¿??????
                                 //?????????
-                                //?????????Î´??ç»????????ç»???????ç»??
+                                //?????????Î´??ï¿????????ï¿???????ï¿??
                                 break;
                             }
 
@@ -369,7 +374,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                     if ((i + 1) < Function.length) {
                                         String GetNews = Function[i] + Function[i + 1];
                                         switch (GetNews) {
-                                            case "´ò¿ª":
+                                            case "ï¿½ï¿½":
                                                 for (int n = 0; n < Function.length; n++) {
                                                     if ((n + 3) < Function.length) {
                                                         String keyword = Function[n] + Function[n + 1] + Function[n + 2] + Function[n + 3];
@@ -382,7 +387,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                     }
                                                 }
                                                 break;
-                                            case "¹Ø±Õ":
+                                            case "ï¿½Ø±ï¿½":
                                                 for (int n = 0; n < Function.length; n++) {
                                                     if ((n + 3) < Function.length) {
                                                         String keyword = Function[n] + Function[n + 1] + Function[n + 2] + Function[n + 3];
@@ -522,21 +527,21 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                             if ((i + 1) < Function.length) {
                                                 String GetNews = Function[i] + Function[i + 1];
                                                 switch (GetNews) {
-                                                    case "ÐÂÎÅ":
+                                                    case "???":
                                                         for (int n = 0; n < Function.length; n++) {
                                                             if ((n + 1) < Function.length) {
                                                                 String keyword = Function[n] + Function[n + 1];
                                                                 VoiceTag = "N";
                                                                 switch (keyword) {
-                                                                    case "Éç»á":
+                                                                    case "????":
                                                                         VoiceTag = "N1";
                                                                         Jump("http://apis.baidu.com/txapi/social/social");
                                                                         break;
-                                                                    case "¹ú¼Ê":
+                                                                    case "ï¿½ï¿½ï¿?":
                                                                         VoiceTag = "N2";
                                                                         Jump("http://apis.baidu.com/txapi/world/world");
                                                                         break;
-                                                                    case "ÌåÓý":
+                                                                    case "ï¿½ï¿½ï¿½ï¿½":
                                                                         VoiceTag = "N3";
                                                                         Jump("http://apis.baidu.com/txapi/tiyu/tiyu");
                                                                         break;
@@ -547,19 +552,19 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                         }
                                                         break;
 
-                                                    case "ÁÁ¶È":
+                                                    case "????":
                                                         for (int n = 0; n < Function.length; n++) {
                                                             if ((n + 1) < Function.length) {
                                                                 BrightnessAction brightnessAction = new BrightnessAction(ctx);
                                                                 String keyword = Function[n] + Function[n + 1];
                                                                 int BrightnessNow = brightnessAction.screenBrightness_check();
                                                                 switch (keyword) {
-                                                                    case "Ôö´ó":
+                                                                    case "?????":
                                                                         VoiceTag = "B1";
                                                                         int increase = BrightnessNow + 52;
                                                                         brightnessAction.setScreenBritness(increase);
                                                                         break;
-                                                                    case "½µµÍ":
+                                                                    case "ï¿½ï¿½ï¿½ï¿½":
                                                                         VoiceTag = "B2";
                                                                         int lower = BrightnessNow - 52;
                                                                         brightnessAction.setScreenBritness(lower);
@@ -569,23 +574,23 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                         }
                                                         break;
 
-                                                    case "ÒôÁ¿":
+                                                    case "nihao":
                                                         for (int n = 0; n < Function.length; n++) {
                                                             if ((n + 1) < Function.length) {
                                                                 String keyword = Function[n] + Function[n + 1];
                                                                 switch (keyword) {
-                                                                    case "Ã½Ìå":
+                                                                    case "Ã½ï¿½ï¿½":
                                                                         for (int m = 0; m < Function.length; m++) {
 
                                                                             if ((m + 1) < Function.length) {
                                                                                 String keywordType = Function[m] + Function[m + 1];
-                                                                                if (keywordType.equals("Ôö´ó")) {
+                                                                                if (keywordType.equals("ï¿½ï¿½ï¿½ï¿½")) {
                                                                                     VoiceTag = "S1";
                                                                                     ChangeVolume(
                                                                                             AudioManager.STREAM_MUSIC,
                                                                                             AudioManager.ADJUST_RAISE,
                                                                                             AudioManager.FX_FOCUS_NAVIGATION_UP);
-                                                                                } else if (keywordType.equals("½µµÍ")) {
+                                                                                } else if (keywordType.equals("ï¿½ï¿½ï¿½ï¿½")) {
                                                                                     VoiceTag = "S2";
                                                                                     ChangeVolume(
                                                                                             AudioManager.STREAM_MUSIC,
@@ -595,17 +600,17 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                                             }
                                                                         }
                                                                         break;
-                                                                    case "ÌáÊ¾":
+                                                                    case "ï¿½ï¿½Ê¾":
                                                                         for (int m = 0; m < Function.length; m++) {
                                                                             if ((m + 1) < Function.length) {
                                                                                 String keywordType = Function[m] + Function[m + 1];
-                                                                                if (keywordType.equals("Ôö´ó")) {
+                                                                                if (keywordType.equals("ï¿½ï¿½ï¿½ï¿½")) {
                                                                                     VoiceTag = "S3";
                                                                                     ChangeVolume(
                                                                                             AudioManager.STREAM_ALARM,
                                                                                             AudioManager.ADJUST_RAISE,
                                                                                             AudioManager.FX_FOCUS_NAVIGATION_UP);
-                                                                                } else if (keywordType.equals("½µµÍ")) {
+                                                                                } else if (keywordType.equals("ï¿½ï¿½ï¿½ï¿½")) {
                                                                                     VoiceTag = "S4";
                                                                                     ChangeVolume(
                                                                                             AudioManager.STREAM_ALARM,
@@ -616,17 +621,17 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                                         }
 
                                                                         break;
-                                                                    case "ÁåÉù":
+                                                                    case "ï¿½ï¿½ï¿½ï¿½":
                                                                         for (int m = 0; m < Function.length; m++) {
                                                                             if ((m + 1) < Function.length) {
                                                                                 String keywordType = Function[m] + Function[m + 1];
-                                                                                if (keywordType.equals("Ôö´ó")) {
+                                                                                if (keywordType.equals("ï¿½ï¿½ï¿½ï¿½")) {
                                                                                     VoiceTag = "S5";
                                                                                     ChangeVolume(
                                                                                             AudioManager.STREAM_RING,
                                                                                             AudioManager.ADJUST_RAISE,
                                                                                             AudioManager.FX_FOCUS_NAVIGATION_UP);
-                                                                                } else if (keywordType.equals("½µµÍ")) {
+                                                                                } else if (keywordType.equals("ï¿½ï¿½ï¿½ï¿½")) {
                                                                                     VoiceTag = "S6";
                                                                                     ChangeVolume(
                                                                                             AudioManager.STREAM_RING,
@@ -636,17 +641,17 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                                             }
                                                                         }
                                                                         break;
-                                                                    case "Í¨»°":
+                                                                    case "Í¨ï¿½ï¿½":
                                                                         for (int m = 0; m < Function.length; m++) {
                                                                             if ((m + 1) < Function.length) {
                                                                                 String keywordType = Function[m] + Function[m + 1];
-                                                                                if (keywordType.equals("Ôö´ó")) {
+                                                                                if (keywordType.equals("ï¿½ï¿½ï¿½ï¿½")) {
                                                                                     VoiceTag = "S7";
                                                                                     ChangeVolume(
                                                                                             AudioManager.STREAM_VOICE_CALL,
                                                                                             AudioManager.ADJUST_RAISE,
                                                                                             AudioManager.FX_FOCUS_NAVIGATION_UP);
-                                                                                } else if (keywordType.equals("½µµÍ")) {
+                                                                                } else if (keywordType.equals("ï¿½ï¿½ï¿½ï¿½")) {
                                                                                     VoiceTag = "S8";
                                                                                     ChangeVolume(
                                                                                             AudioManager.STREAM_VOICE_CALL,
@@ -660,14 +665,14 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                             }
                                                         }
                                                         break;
-                                                    case "·¢¸ø":
+                                                    case "?????":
                                                         if (activityContext instanceof MassageEditActivity) {
                                                             VoiceTag = "M1";
-                                                        //ÔÚ±à¼­¶ÌÐÅÒ³ÃæÖÐ
+                                                        //ï¿½Ú±à¼­ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½
                                                             for (int n = i + 2; n < Function.length; n++) {
                                                                 if (paragraph == null) {
                                                                     paragraph = Function[n];
-                                                                }else if(Function[n].equals("¡£")){
+                                                                }else if(Function[n].equals("ï¿½ï¿½")){
                                                                     continue;
                                                                 }
                                                                 else {
@@ -688,10 +693,10 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                             }
                                                         }
                                                         break;
-                                                    case "ÄÚÈÝ":
+                                                    case "ï¿½ï¿½ï¿½ï¿½":
                                                         if (activityContext instanceof MassageEditActivity) {
                                                             VoiceTag = "M2";
-                                                            //ÔÚ±à¼­¶ÌÐÅÒ³ÃæÖÐ
+                                                            //ï¿½Ú±à¼­ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½
                                                             for (int n = i + 3; n < Function.length; n++) {
                                                                 if (paragraph == null) {
                                                                     paragraph = Function[n];
@@ -720,7 +725,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                                 Log.v("Function.length", String.valueOf(Function.length));
                                                 if (VoiceTag.equals("null") && (i + 1) == Function.length) {
                                                     Log.v("ininini", "in");
-                                                    speak("²»ÖªµÀÄúÒª¸ÉÂï£¬²»¹ýÎÒÏë¹ýÒ»¶ÎÊ±¼äÎÒ¾Í»á¶®ÁË¡£", false, ctx);
+                                                    speak("ninhao", false, ctx);
                                                     VoiceTag = "";
 
                                                 }
@@ -737,15 +742,15 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
 
 
-//    //¶¨Î»²¿·Ö
+//    //ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 //    /***
 //     * Stop location service
 //     */
 //    @Override
 //    protected void onStop() {
 //        // TODO Auto-generated method stub
-//        locationService.unregisterListener(mListener); //×¢Ïúµô¼àÌý
-//        locationService.stop(); //Í£Ö¹¶¨Î»·þÎñ
+//        locationService.unregisterListener(mListener); //×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿?
+//        locationService.stop(); //Í£Ö¹ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
 //        super.onStop();
 //    }
 //
@@ -755,9 +760,9 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 //        super.onStart();
 //        // -----------location config ------------
 //        locationService = ((MyApplication)getApplication()).locationService;
-//        //»ñÈ¡locationserviceÊµÀý£¬½¨ÒéÓ¦ÓÃÖÐÖ»³õÊ¼»¯1¸ölocationÊµÀý£¬È»ºóÊ¹ÓÃ£¬¿ÉÒÔ²Î¿¼ÆäËûÊ¾ÀýµÄactivity£¬¶¼ÊÇÍ¨¹ý´ËÖÖ·½Ê½»ñÈ¡locationserviceÊµÀýµÄ
+//        //ï¿½ï¿½È¡locationserviceÊµï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Ê¼ï¿½ï¿½1ï¿½ï¿½locationÊµï¿½ï¿½È»ï¿½ï¿½Ê¹ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Ô²Î¿ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½activityï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ö·ï¿½Ê½ï¿½ï¿½È¡locationserviceÊµï¿½ï¿½ï¿?
 //        locationService.registerListener(mListener);
-//        //×¢²á¼àÌý
+//        //×¢ï¿½ï¿½ï¿½ï¿½ï¿?
 //        int type = getIntent().getIntExtra("from", 0);
 //        if (type == 0) {
 //            locationService.setLocationOption(locationService.getDefaultLocationClientOption());
@@ -770,7 +775,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 //
 //    /*****
 //     * @see copy funtion to you project
-//     * ¶¨Î»½á¹û»Øµ÷£¬ÖØÐ´onReceiveLocation·½·¨£¬¿ÉÒÔÖ±½Ó¿½±´ÈçÏÂ´úÂëµ½×Ô¼º¹¤³ÌÖÐÐÞ¸Ä
+//     * ï¿½ï¿½Î»ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½Ð´onReceiveLocationï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½ï¿½ëµ½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½
 //     *
 //     */
 //    public BDLocationListener mListener = new BDLocationListener() {
@@ -834,7 +839,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
     public void speechRecognition(){//?????
         //1.????SpeechRecognizer???????????? ??????Ð´???InitListener
         mIat= SpeechRecognizer.createRecognizer(ctx, mInitListener);
-        // ???????Ð´Dialog???????????UI??Ð´????????è´??SpeechRecognizer
+        // ???????Ð´Dialog???????????UI??Ð´????????ï¿??SpeechRecognizer
         mIatDialog = new RecognizerDialog(ctx, mInitListener);
         //????????????
         mTextUnderstander = TextUnderstander.createTextUnderstander(ctx, textUnderstanderListener);
@@ -927,16 +932,16 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 					/*private void dialogueManagement(int mainServiceID,int branchServiceID) {//?????????
 						// TODO Auto-generated method stub
 						if(mainServiceID==1){
-							if(branchServiceID==1){//???????ç»??????????????ç»????,????????Ð¡???????????????????????Î¡???Î²?????
+							if(branchServiceID==1){//???????ï¿??????????????ï¿????,????????Ð¡???????????????????????Î¡???Î²?????
 								//???????????????????????
 
 							}
-							if(branchServiceID==2){//????????ç»??????
+							if(branchServiceID==2){//????????ï¿??????
 
 							}
 
 						}
-						if(mainServiceID==2){//??????????????????????ç»????????????
+						if(mainServiceID==2){//??????????????????????ï¿????????????
 
 						}
 					}*/
