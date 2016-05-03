@@ -92,11 +92,16 @@
     <orderEntry type="jdk" jdkName="Android API 20 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="pinyin4j-2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_base_v3_7_3" level="project" />
     <orderEntry type="library" exported="" name="Msc" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-20.0.0" level="project" />
     <orderEntry type="library" exported="" name="library-1.2.2" level="project" />
+    <orderEntry type="library" exported="" name="ApiStoreSDK1.0.4" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_search_v3_7_3" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_map_v3_7_3" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.2.1" level="project" />
+    <orderEntry type="library" exported="" name="locSDK_6.23" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
     <orderEntry type="module" module-name="MaterialDesign" exported="" />
   </component>

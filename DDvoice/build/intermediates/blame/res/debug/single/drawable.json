@@ -4,40 +4,36 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\shadow_right.xml"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\send_btn_n.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\send_btn_n.png"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather102.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather102.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_ab_holo_light.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_spinner_ab_holo_light.xml"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\phone.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\phone.png"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather306.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather306.png"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\mic_n.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\mic_n.png"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather501.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather501.png"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_chat.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\bg_chat.png"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather311.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather311.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_en.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\icon_en.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\send_btn_p.png",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\send_btn_p.png"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_progress.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_progress.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\icn_progress.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\icn_progress.png"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_button_rectangle.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_button_rectangle.xml"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather303.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather303.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\siri_button.xml",
@@ -56,40 +52,104 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_switch_ball_uncheck.xml"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\message.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\message.png"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather307.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather307.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather504.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather504.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\mic.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\mic.xml"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\ic_launcher.png"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\switch_btn.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\switch_btn.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\send_btn_n.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\send_btn_n.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\checkbox_on.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\checkbox_on.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\phone.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\phone.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\mic_n.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\mic_n.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_chat.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\bg_chat.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\icn_progress.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\icn_progress.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_progress.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_progress.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_button_rectangle.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_button_rectangle.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\checkbox_off.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\checkbox_off.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\location_icon.jpg",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\location_icon.jpg"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather312.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather312.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\message.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\message.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather305.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather305.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather202.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather202.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather301.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather301.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather503.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather503.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather103.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather103.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather403.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather403.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\alarm_clock.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\alarm_clock.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_button.9.png",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_button.9.png"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\siri_button_running.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\siri_button_running.png"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_list_selector_holo_light.xml"
-    },
-    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_right_holo_light.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_textfield_searchview_right_holo_light.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_checkbox_uncheck.xml",
@@ -100,8 +160,100 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\icn_switch.png"
     },
     {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather508.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather508.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather302.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather302.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather203.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather203.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather308.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather308.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\main_bg.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\main_bg.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather210.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather210.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_ic_clear.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather507.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather507.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather404.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather404.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather405.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather405.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_checkbox.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_checkbox.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\msgbox_send.9.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\msgbox_send.9.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\siri_button_running.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\siri_button_running.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather200.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather200.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather401.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather401.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather402.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather402.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather206.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather206.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather400.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather400.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather.png",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\popup.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\popup.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\timg.jpg",
@@ -120,20 +272,8 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_ic_clear_holo_light.xml"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_ic_clear.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_checkbox.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_checkbox.xml"
-    },
-    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\msgbox_send.9.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\msgbox_send.9.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_holo_dark.xml",
@@ -144,20 +284,8 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_search_dropdown_light.xml"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_search_dropdown_dark.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_search_dropdown_dark.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_checkbox_check.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_checkbox_check.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_ab_holo.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_tab_indicator_ab_holo.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\msgbox_rec.9.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\msgbox_rec.9.png"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather208.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather208.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\location.png",
@@ -168,6 +296,58 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\note.png"
     },
     {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather104.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather104.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\pre_.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\pre_.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather201.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather201.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather313.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather313.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather500.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather500.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_alice.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\bg_alice.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_search_dropdown_dark.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_search_dropdown_dark.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_ab_holo.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_tab_indicator_ab_holo.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_checkbox_check.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_checkbox_check.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\next_.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\next_.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\msgbox_rec.9.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\msgbox_rec.9.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather101.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather101.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather205.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather205.png"
+    },
+    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_right_holo_dark.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\drawable\\abc_textfield_searchview_right_holo_dark.xml"
     },
@@ -176,20 +356,40 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\bg.jpg"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_alice.png",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\bg_alice.png"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather207.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather207.png"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_button_float.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_button_float.xml"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather310.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather310.png"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_transparent.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_transparent.xml"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather211.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather211.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\location_rigin.jpg",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\location_rigin.jpg"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather502.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather502.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather204.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather204.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\siri_button_normal.png",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\siri_button_normal.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather100.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather100.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather407.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather407.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\icn_widget.png",
@@ -200,8 +400,60 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\send_btn.xml"
     },
     {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather213.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather213.png"
+    },
+    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\shadow_down.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\shadow_down.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_st.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\icon_st.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather999.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather999.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather901.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather901.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather300.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather300.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_button_float.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_button_float.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather212.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather212.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather304.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather304.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\background_transparent.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\drawable\\background_transparent.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather406.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather406.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather900.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather900.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather209.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather209.png"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\weather309.png",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\drawable\\weather309.png"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",

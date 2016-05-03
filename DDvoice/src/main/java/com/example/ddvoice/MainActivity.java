@@ -10,8 +10,8 @@ import android.widget.*;
 
 public class MainActivity extends Activity {
 
-	    private MediaPlayer player;//²¥·ÅÒôÀÖ
-	    //ToastÌáÊ¾ÏûÏ¢
+	    private MediaPlayer player;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    //Toastï¿½ï¿½Ê¾ï¿½ï¿½Ï¢
 	    private Toast info;
 
 
@@ -28,11 +28,11 @@ public class MainActivity extends Activity {
 
 		    OnlineSpeechAction vbutton = new OnlineSpeechAction(this);
 			/*mProgressDialog = new ProgressDialog(this);
-			mProgressDialog.setMessage("ÕýÔÚ³õÊ¼»¯£¬ÇëÉÔºò¡­¡­ ^_^");
+			mProgressDialog.setMessage("ï¿½ï¿½ï¿½Ú³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôºò¡­¡ï¿½ ^_^");
 			mProgressDialog.setCancelable(false);
 			mProgressDialog.show();*/
 			showTip("³õÊ¼»¯ÖÐ...");
-			//info.makeText(getApplicationContext(), "³õÊ¼»¯ÖÐ...", 5).show();
+			//info.makeText(getApplicationContext(), "ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½...", 5).show();
 	       // showTip("hai");
 
 
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 			vbutton.speechRecognition();
 			//mProgressDialog.dismiss();
 		    showTip("³õÊ¼»¯Íê±Ï");
-			//info.makeText(getApplicationContext(), "³õÊ¼»¯Íê±Ï", 5).show();
+			//info.makeText(getApplicationContext(), "ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿?, 5).show();
 
 			player = MediaPlayer.create(MainActivity.this, R.raw.lock);
 			player.start();
@@ -55,6 +55,6 @@ public class MainActivity extends Activity {
 		info.setText(str);
 		info.show();
 	}
-	
-	
+
+
 }

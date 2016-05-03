@@ -18,6 +18,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
 import com.gc.materialdesign.views.CheckBox;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
@@ -49,6 +51,7 @@ import com.example.ddvoice.MainActivity;
  */
 public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.OnClickListener {
         private Context ctx;
+    private LocationService locationService;
         public OnlineSpeechAction(Context context){
             ctx = context;
             info=Toast.makeText(ctx, "", Toast.LENGTH_SHORT);
@@ -470,6 +473,10 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                                 switch (operation) {
 
                                     case "QUERY": {//???????
+                                        Intent intent = new Intent(ctx,WeatherActivity.class);
+                                        ctx.startActivity(intent);
+                                        locationService.start();
+                                        locationService.stop();
 
 
                                         break;
@@ -730,6 +737,54 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
 
 
+//    //定位部分
+//    /***
+//     * Stop location service
+//     */
+//    @Override
+//    protected void onStop() {
+//        // TODO Auto-generated method stub
+//        locationService.unregisterListener(mListener); //注销掉监听
+//        locationService.stop(); //停止定位服务
+//        super.onStop();
+//    }
+//
+//    @Override
+//    protected void onStart() {
+//        // TODO Auto-generated method stub
+//        super.onStart();
+//        // -----------location config ------------
+//        locationService = ((MyApplication)getApplication()).locationService;
+//        //获取locationservice实例，建议应用中只初始化1个location实例，然后使用，可以参考其他示例的activity，都是通过此种方式获取locationservice实例的
+//        locationService.registerListener(mListener);
+//        //注册监听
+//        int type = getIntent().getIntExtra("from", 0);
+//        if (type == 0) {
+//            locationService.setLocationOption(locationService.getDefaultLocationClientOption());
+//        } else if (type == 1) {
+//            locationService.setLocationOption(locationService.getOption());
+//        }
+//
+//    }
+//
+//
+//    /*****
+//     * @see copy funtion to you project
+//     * 定位结果回调，重写onReceiveLocation方法，可以直接拷贝如下代码到自己工程中修改
+//     *
+//     */
+//    public BDLocationListener mListener = new BDLocationListener() {
+//
+//        String locationStr;
+//
+//        @Override
+//        public void onReceiveLocation(BDLocation location) {
+//            // TODO Auto-generated method stub
+//            WeatherActivity.nowLocation = location.getCity().toString();
+//        }
+//    };
+
+
 
 
 
@@ -756,7 +811,8 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
 
             activity.findViewById(R.id.voice_input).setOnClickListener(this);
-            SpeechUtility.createUtility(ctx, SpeechConstant.APPID + "=564f2dfe");
+            SpeechUtility.createUtility(ctx, SpeechConstant.APPID + "=564f2dfe" +
+                    ".");
 
     }
 
