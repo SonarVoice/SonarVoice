@@ -46,15 +46,15 @@ public class PhoneActivity extends Activity{
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.phone_activity);
 
         OnlineSpeechAction vbutton = new OnlineSpeechAction(this);
         vbutton.initIflytek();
         vbutton.initUI();
         vbutton.speechRecognition();
-//        showTip("初始化完毕");
-        //info.makeText(getApplicationContext(), "初始化完毕", 5).show();
+
+        //info.makeText(getApplicationContext(), "", 5).show();
 
         player = MediaPlayer.create(PhoneActivity.this, R.raw.lock);
         player.start();

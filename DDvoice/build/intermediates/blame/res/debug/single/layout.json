@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\phone_view_header.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\phone_view_header.xml"
-    },
-    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\layout\\abc_action_mode_close_item.xml"
     },
@@ -16,6 +12,26 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.github.traex.expandablelayout\\library\\1.2.2\\res\\layout\\view_expandable.xml"
     },
     {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\weather_details_content.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\weather_details_content.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\weather_main.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\weather_main.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\phone_view_header.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\phone_view_header.xml"
+    },
+    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\main_ui.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\main_ui.xml"
     },
@@ -24,12 +40,12 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\call_recently_view_content.xml"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\alarmclock_main.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\alarmclock_main.xml"
     },
     {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_include.xml",
@@ -38,10 +54,6 @@
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\massege_activity.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\massege_activity.xml"
-    },
-    {
-        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
-        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\list_item.xml"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\phone_view.xml",
@@ -80,12 +92,20 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\details_dialog.xml"
     },
     {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\weather_summary_content.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\weather_summary_content.xml"
+    },
+    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\dialog.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\SonarVoice\\MaterialDesign\\unspecified\\res\\layout\\dialog.xml"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\massege_view_content.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\massege_view_content.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\alarmclock_setting.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\alarmclock_setting.xml"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\massage_edit_activity.xml",
@@ -118,6 +138,10 @@
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\alarmclock_content.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\alarmclock_content.xml"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\news_items.xml",
@@ -156,6 +180,10 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\phone_activity.xml"
     },
     {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\weather_suggestion_content.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\weather_suggestion_content.xml"
+    },
+    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\layout\\abc_list_menu_item_layout.xml"
     },
@@ -176,6 +204,10 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\phone_call_activity_content.xml"
     },
     {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\weather_suggestion_header.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\weather_suggestion_header.xml"
+    },
+    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\massage_records_header.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\massage_records_header.xml"
     },
@@ -188,6 +220,10 @@
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\massage_view.xml"
     },
     {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\weather_summary_header.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\weather_summary_header.xml"
+    },
+    {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\phone_call_activity.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\phone_call_activity.xml"
     },
@@ -198,6 +234,10 @@
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_decor_include.xml",
         "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\20.0.0\\res\\layout\\abc_action_bar_decor_include.xml"
+    },
+    {
+        "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\alarmclock_setting_content.xml",
+        "source": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\src\\main\\res\\layout\\alarmclock_setting_content.xml"
     },
     {
         "merged": "D:\\GitHub-workplace\\SonarVoice\\DDvoice\\build\\intermediates\\res\\merged\\debug\\layout\\phone_view_content.xml",

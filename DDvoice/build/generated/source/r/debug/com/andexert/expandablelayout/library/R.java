@@ -17,14 +17,14 @@ public final class R {
 		public static final int headerLayout = 0x7f01006a;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f020066;
+		public static final int ic_launcher = 0x7f020069;
 	}
 	public static final class id {
-		public static final int view_expandable_contentLayout = 0x7f0c0096;
-		public static final int view_expandable_headerlayout = 0x7f0c0095;
+		public static final int view_expandable_contentLayout = 0x7f0c00b1;
+		public static final int view_expandable_headerlayout = 0x7f0c00b0;
 	}
 	public static final class layout {
-		public static final int view_expandable = 0x7f030035;
+		public static final int view_expandable = 0x7f030039;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f06000e;

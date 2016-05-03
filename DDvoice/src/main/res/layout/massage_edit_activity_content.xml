@@ -45,7 +45,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:editable="false"
             android:text=""
             android:layout_toRightOf="@id/massagePhoneNumberTextView"
             android:id="@+id/massagePhoneNumberEditText"

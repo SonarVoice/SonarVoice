@@ -71,6 +71,29 @@ public class ChatMsgViewAdapter extends BaseAdapter {
                 }
             });
 
+            LayoutRipple Weather = (LayoutRipple)convertView.findViewById(R.id.weatheritems);
+            Weather.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View arg0) {
+                    Intent intent = new Intent(ctx, WeatherActivity.class);
+                    intent.putExtra("BACKGROUND", backgroundColor);
+                    ctx.startActivity(intent);
+                }
+            });
+
+
+
+
+            LayoutRipple Widgets = (LayoutRipple)convertView.findViewById(R.id.itemWidgets);
+            Widgets.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View arg0) {
+                    Intent intent = new Intent(ctx, AlarmClockMainActivity.class);
+                    intent.putExtra("BACKGROUND", backgroundColor);
+                    ctx.startActivity(intent);
+                }
+            });
+
         }
         else{
 
