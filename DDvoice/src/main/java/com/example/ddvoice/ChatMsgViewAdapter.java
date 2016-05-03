@@ -60,6 +60,17 @@ public class ChatMsgViewAdapter extends BaseAdapter {
                         ctx.startActivity(intent);
                     }
                 });
+
+            LayoutRipple Massage = (LayoutRipple)convertView.findViewById(R.id.messageitems);
+            Massage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View arg0) {
+                    Intent intent = new Intent(ctx, MassegeActivity.class);
+                    intent.putExtra("BACKGROUND", backgroundColor);
+                    ctx.startActivity(intent);
+                }
+            });
+
         }
         else{
 

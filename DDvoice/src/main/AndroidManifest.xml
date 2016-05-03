@@ -38,14 +38,24 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!--获取设置闹钟权限  -->
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <!--写入手机亮度权限 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" ></uses-permission>
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"></uses-permission>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 	
     <application
         android:allowBackup="true"
         android:label="@string/app_name" >
         <activity
-            android:name=".MainActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name" >
+            android:name="com.example.ddvoice.LoadingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,7 +63,48 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.ddvoice.PhoneActivity"
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".PhoneActivity"
+            android:label="打电话" >
+            <intent-filter>
+                <action android:name="android.intent.action.PhoneActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PhoneCallActivity"
+            android:label="打电话" >
+            <intent-filter>
+                <action android:name="android.intent.action.PhoneCallActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MassegeActivity"
+            android:label="发短信" >
+            <intent-filter>
+                <action android:name="android.intent.action.MassegeActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MassageEditActivity"
+            android:label="发短信" >
+            <intent-filter>
+                <action android:name="android.intent.action.MassegeEditActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.ddvoice.NewsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>

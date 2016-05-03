@@ -1,17 +1,20 @@
 package com.example.ddvoice;
 
+import android.content.Context;
+
 public class OpenQA {
 
 	private String mText;
-	OnlineSpeechAction vActivity;
-	
-	public OpenQA(String text,OnlineSpeechAction activity){
+	OnlineSpeechAction onlineSpeechAction;
+	Context ctx;
+	public OpenQA(String text,Context context,OnlineSpeechAction activity){
+		this.ctx = context;
 		mText=text;
-		vActivity=activity;
+		onlineSpeechAction=activity;
 	}
 	
 	public void start(){
-		vActivity.speak(mText, false);
+		onlineSpeechAction.speak(mText, false,ctx);
 	}
 	
 }

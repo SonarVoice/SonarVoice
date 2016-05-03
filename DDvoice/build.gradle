@@ -6,7 +6,7 @@ android {
     compileOptions.encoding = "GBK"
     defaultConfig {
         applicationId "com.example.ddvoice"
-        minSdkVersion 8
+        minSdkVersion 11
         targetSdkVersion 20
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_7

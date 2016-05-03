@@ -23,6 +23,20 @@
             android:id="@+id/phoneReturnButton"
             />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:text="打电话"
+            android:textColor="#ffffff"
+            android:textSize="30px"
+            android:background="#FFCCCC"
+            android:paddingLeft="30px"
+            android:paddingRight="30px"
+            android:layout_centerVertical="true"
+            android:id="@+id/newCallButton"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
