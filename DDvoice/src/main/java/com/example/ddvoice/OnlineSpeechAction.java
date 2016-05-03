@@ -88,6 +88,8 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
         private SharedPreferences mSharedPreferences;
         private SharedPreferences mSharedPreferencesTTS;
         MainActivity mActivity = new MainActivity();
+        GetNameAction getNameAction = new GetNameAction();
+
         //????????????
         private RecognizerListener recognizerListener = new RecognizerListener() {
             public void onBeginOfSpeech() {
@@ -357,7 +359,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
                             case "ANSWER": {//??????
                                 Log.v("wifi", text);
-                                String[] Function = getParagraph(SaveResult);
+                                String[] Function = getNameAction.getParagraph(SaveResult);
                                 WifiManager wifiManager = (WifiManager) ctx
                                         .getSystemService(Context.WIFI_SERVICE);
                                 for (int i = 0; i < Function.length; i++) {
@@ -501,170 +503,222 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
 
                             default: {
                                 String VoiceTag = "null";
+                                String paragraph = null;
                                 try {
                                     JSONObject JSONNews = new JSONObject(SaveResult);
                                     String FunctionText = JSONNews.getString("text");
-                                    String[] Function = getParagraph(FunctionText);
+                                    String[] Function = getNameAction.getParagraph(FunctionText);
                                     WifiManager wifiManager = (WifiManager) ctx.getSystemService(Context.WIFI_SERVICE);
-                                    for (int i = 0; i < Function.length; i++) {
-                                        Log.v("i",String.valueOf(i));
-                                        if ((i + 1) < Function.length) {
-                                            String GetNews = Function[i] + Function[i + 1];
-                                            switch (GetNews) {
-                                                case "新闻":
-                                                    for (int n = 0; n < Function.length; n++) {
-                                                        if ((n + 1) < Function.length) {
-                                                            String keyword = Function[n] + Function[n + 1];
-                                                            VoiceTag = "N";
-                                                            switch (keyword) {
-                                                                case "社会":
-                                                                    VoiceTag = "N1";
-                                                                    Jump("http://apis.baidu.com/txapi/social/social");
-                                                                    break;
-                                                                case "国际":
-                                                                    VoiceTag = "N2";
-                                                                    Jump("http://apis.baidu.com/txapi/world/world");
-                                                                    break;
-                                                                case "体育":
-                                                                    VoiceTag = "N3";
-                                                                    Jump("http://apis.baidu.com/txapi/tiyu/tiyu");
-                                                                    break;
-                                                                default:
-                                                                    break;
+                                    Activity activityContext = (Activity) ctx;
+                                        for (int i = 0; i < Function.length; i++) {
+                                            Log.v("i", String.valueOf(i));
+                                            if ((i + 1) < Function.length) {
+                                                String GetNews = Function[i] + Function[i + 1];
+                                                switch (GetNews) {
+                                                    case "新闻":
+                                                        for (int n = 0; n < Function.length; n++) {
+                                                            if ((n + 1) < Function.length) {
+                                                                String keyword = Function[n] + Function[n + 1];
+                                                                VoiceTag = "N";
+                                                                switch (keyword) {
+                                                                    case "社会":
+                                                                        VoiceTag = "N1";
+                                                                        Jump("http://apis.baidu.com/txapi/social/social");
+                                                                        break;
+                                                                    case "国际":
+                                                                        VoiceTag = "N2";
+                                                                        Jump("http://apis.baidu.com/txapi/world/world");
+                                                                        break;
+                                                                    case "体育":
+                                                                        VoiceTag = "N3";
+                                                                        Jump("http://apis.baidu.com/txapi/tiyu/tiyu");
+                                                                        break;
+                                                                    default:
+                                                                        break;
+                                                                }
                                                             }
                                                         }
-                                                    }
-                                                    break;
+                                                        break;
 
-                                                case "亮度":
-                                                    for (int n = 0; n < Function.length; n++) {
-                                                        if ((n + 1) < Function.length) {
-                                                            BrightnessAction brightnessAction = new BrightnessAction(ctx);
-                                                            String keyword = Function[n] + Function[n + 1];
-                                                            int BrightnessNow = brightnessAction.screenBrightness_check();
-                                                            switch (keyword) {
-                                                                case "增大":
-                                                                    VoiceTag = "B1";
-                                                                    int increase = BrightnessNow + 52;
-                                                                    brightnessAction.setScreenBritness(increase);
-                                                                    break;
-                                                                case "降低":
-                                                                    VoiceTag = "B2";
-                                                                    int lower = BrightnessNow - 52;
-                                                                    brightnessAction.setScreenBritness(lower);
-                                                                    break;
+                                                    case "亮度":
+                                                        for (int n = 0; n < Function.length; n++) {
+                                                            if ((n + 1) < Function.length) {
+                                                                BrightnessAction brightnessAction = new BrightnessAction(ctx);
+                                                                String keyword = Function[n] + Function[n + 1];
+                                                                int BrightnessNow = brightnessAction.screenBrightness_check();
+                                                                switch (keyword) {
+                                                                    case "增大":
+                                                                        VoiceTag = "B1";
+                                                                        int increase = BrightnessNow + 52;
+                                                                        brightnessAction.setScreenBritness(increase);
+                                                                        break;
+                                                                    case "降低":
+                                                                        VoiceTag = "B2";
+                                                                        int lower = BrightnessNow - 52;
+                                                                        brightnessAction.setScreenBritness(lower);
+                                                                        break;
+                                                                }
                                                             }
                                                         }
-                                                    }
-                                                    break;
+                                                        break;
 
-                                                case "音量":
-                                                    for (int n = 0; n < Function.length; n++) {
-                                                        if ((n + 1) < Function.length) {
-                                                            String keyword = Function[n] + Function[n + 1];
-                                                            switch (keyword) {
-                                                                case "媒体":
-                                                                    for (int m = 0; m < Function.length; m++) {
+                                                    case "音量":
+                                                        for (int n = 0; n < Function.length; n++) {
+                                                            if ((n + 1) < Function.length) {
+                                                                String keyword = Function[n] + Function[n + 1];
+                                                                switch (keyword) {
+                                                                    case "媒体":
+                                                                        for (int m = 0; m < Function.length; m++) {
 
-                                                                        if ((m + 1) < Function.length) {
-                                                                            String keywordType = Function[m] + Function[m + 1];
-                                                                            if (keywordType.equals("增大")) {
-                                                                                VoiceTag = "S1";
-                                                                                ChangeVolume(
-                                                                                        AudioManager.STREAM_MUSIC,
-                                                                                        AudioManager.ADJUST_RAISE,
-                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
-                                                                            } else if (keywordType.equals("降低")) {
-                                                                                VoiceTag = "S2";
-                                                                                ChangeVolume(
-                                                                                        AudioManager.STREAM_MUSIC,
-                                                                                        AudioManager.ADJUST_LOWER,
-                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                            if ((m + 1) < Function.length) {
+                                                                                String keywordType = Function[m] + Function[m + 1];
+                                                                                if (keywordType.equals("增大")) {
+                                                                                    VoiceTag = "S1";
+                                                                                    ChangeVolume(
+                                                                                            AudioManager.STREAM_MUSIC,
+                                                                                            AudioManager.ADJUST_RAISE,
+                                                                                            AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                                } else if (keywordType.equals("降低")) {
+                                                                                    VoiceTag = "S2";
+                                                                                    ChangeVolume(
+                                                                                            AudioManager.STREAM_MUSIC,
+                                                                                            AudioManager.ADJUST_LOWER,
+                                                                                            AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                                }
                                                                             }
                                                                         }
-                                                                    }
-                                                                    break;
-                                                                case "提示":
-                                                                    for (int m = 0; m < Function.length; m++) {
-                                                                        if ((m + 1) < Function.length) {
-                                                                            String keywordType = Function[m] + Function[m + 1];
-                                                                            if (keywordType.equals("增大")) {
-                                                                                VoiceTag = "S3";
-                                                                                ChangeVolume(
-                                                                                        AudioManager.STREAM_ALARM,
-                                                                                        AudioManager.ADJUST_RAISE,
-                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
-                                                                            } else if (keywordType.equals("降低")) {
-                                                                                VoiceTag = "S4";
-                                                                                ChangeVolume(
-                                                                                        AudioManager.STREAM_ALARM,
-                                                                                        AudioManager.ADJUST_LOWER,
-                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                        break;
+                                                                    case "提示":
+                                                                        for (int m = 0; m < Function.length; m++) {
+                                                                            if ((m + 1) < Function.length) {
+                                                                                String keywordType = Function[m] + Function[m + 1];
+                                                                                if (keywordType.equals("增大")) {
+                                                                                    VoiceTag = "S3";
+                                                                                    ChangeVolume(
+                                                                                            AudioManager.STREAM_ALARM,
+                                                                                            AudioManager.ADJUST_RAISE,
+                                                                                            AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                                } else if (keywordType.equals("降低")) {
+                                                                                    VoiceTag = "S4";
+                                                                                    ChangeVolume(
+                                                                                            AudioManager.STREAM_ALARM,
+                                                                                            AudioManager.ADJUST_LOWER,
+                                                                                            AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                                }
                                                                             }
                                                                         }
-                                                                    }
 
-                                                                    break;
-                                                                case "铃声":
-                                                                    for (int m = 0; m < Function.length; m++) {
-                                                                        if ((m + 1) < Function.length) {
-                                                                            String keywordType = Function[m] + Function[m + 1];
-                                                                            if (keywordType.equals("增大")) {
-                                                                                VoiceTag = "S5";
-                                                                                ChangeVolume(
-                                                                                        AudioManager.STREAM_RING,
-                                                                                        AudioManager.ADJUST_RAISE,
-                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
-                                                                            } else if (keywordType.equals("降低")) {
-                                                                                VoiceTag = "S6";
-                                                                                ChangeVolume(
-                                                                                        AudioManager.STREAM_RING,
-                                                                                        AudioManager.ADJUST_LOWER,
-                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                        break;
+                                                                    case "铃声":
+                                                                        for (int m = 0; m < Function.length; m++) {
+                                                                            if ((m + 1) < Function.length) {
+                                                                                String keywordType = Function[m] + Function[m + 1];
+                                                                                if (keywordType.equals("增大")) {
+                                                                                    VoiceTag = "S5";
+                                                                                    ChangeVolume(
+                                                                                            AudioManager.STREAM_RING,
+                                                                                            AudioManager.ADJUST_RAISE,
+                                                                                            AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                                } else if (keywordType.equals("降低")) {
+                                                                                    VoiceTag = "S6";
+                                                                                    ChangeVolume(
+                                                                                            AudioManager.STREAM_RING,
+                                                                                            AudioManager.ADJUST_LOWER,
+                                                                                            AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                                }
                                                                             }
                                                                         }
-                                                                    }
-                                                                    break;
-                                                                case "通话":
-                                                                    for (int m = 0; m < Function.length; m++) {
-                                                                        if ((m + 1) < Function.length) {
-                                                                            String keywordType = Function[m] + Function[m + 1];
-                                                                            if (keywordType.equals("增大")) {
-                                                                                VoiceTag = "S7";
-                                                                                ChangeVolume(
-                                                                                        AudioManager.STREAM_VOICE_CALL,
-                                                                                        AudioManager.ADJUST_RAISE,
-                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
-                                                                            } else if (keywordType.equals("降低")) {
-                                                                                VoiceTag = "S8";
-                                                                                ChangeVolume(
-                                                                                        AudioManager.STREAM_VOICE_CALL,
-                                                                                        AudioManager.ADJUST_LOWER,
-                                                                                        AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                        break;
+                                                                    case "通话":
+                                                                        for (int m = 0; m < Function.length; m++) {
+                                                                            if ((m + 1) < Function.length) {
+                                                                                String keywordType = Function[m] + Function[m + 1];
+                                                                                if (keywordType.equals("增大")) {
+                                                                                    VoiceTag = "S7";
+                                                                                    ChangeVolume(
+                                                                                            AudioManager.STREAM_VOICE_CALL,
+                                                                                            AudioManager.ADJUST_RAISE,
+                                                                                            AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                                } else if (keywordType.equals("降低")) {
+                                                                                    VoiceTag = "S8";
+                                                                                    ChangeVolume(
+                                                                                            AudioManager.STREAM_VOICE_CALL,
+                                                                                            AudioManager.ADJUST_LOWER,
+                                                                                            AudioManager.FX_FOCUS_NAVIGATION_UP);
+                                                                                }
                                                                             }
                                                                         }
-                                                                    }
-                                                                    break;
+                                                                        break;
+                                                                }
                                                             }
                                                         }
-                                                    }
-                                                    break;
-                                                default:
-                                                    break;
+                                                        break;
+                                                    case "发给":
+                                                        if (activityContext instanceof MassageEditActivity) {
+                                                            VoiceTag = "M1";
+                                                        //在编辑短信页面中
+                                                            for (int n = i + 2; n < Function.length; n++) {
+                                                                if (paragraph == null) {
+                                                                    paragraph = Function[n];
+                                                                }else if(Function[n].equals("。")){
+                                                                    continue;
+                                                                }
+                                                                else {
+                                                                    paragraph = paragraph + Function[n];
+                                                                }
+                                                                Log.v("name",paragraph);
+                                                                Log.v("n",String.valueOf(n));
+                                                            }
+                                                            if(paragraph != null) {
+                                                                String MassageName = getNameAction.GetChineseName(paragraph.trim());
+                                                                Bundle bundle = new Bundle();
+                                                                bundle.putSerializable("Name",MassageName);
+                                                                Intent intent = new Intent(ctx,MassageEditActivity.class);
+                                                                intent.putExtras(bundle);
+                                                                ctx.startActivity(intent);
+                                                                ((Activity) ctx).finish();
 
-                                            }
-                                        }else {
-                                            Log.v("ininini",VoiceTag);
-                                            Log.v("i + 1",String.valueOf(i + 1));
-                                            Log.v("Function.length",String.valueOf(Function.length));
-                                            if(VoiceTag.equals("null") && (i + 1) == Function.length){
-                                                Log.v("ininini","in");
-                                                speak("不知道您要干嘛，不过我想过一段时间我就会懂了。", false,ctx);
-                                                VoiceTag = "";
+                                                            }
+                                                        }
+                                                        break;
+                                                    case "内容":
+                                                        if (activityContext instanceof MassageEditActivity) {
+                                                            VoiceTag = "M2";
+                                                            //在编辑短信页面中
+                                                            for (int n = i + 3; n < Function.length; n++) {
+                                                                if (paragraph == null) {
+                                                                    paragraph = Function[n];
+                                                                } else {
+                                                                    paragraph = paragraph + Function[n];
+                                                                }
+                                                            }
+                                                            if(paragraph != null) {
+                                                                Bundle bundle = new Bundle();
+                                                                bundle.putSerializable("Content",paragraph);
+                                                                Intent intent = new Intent(ctx,MassageEditActivity.class);
+                                                                intent.putExtras(bundle);
+                                                                ctx.startActivity(intent);
+                                                                ((Activity) ctx).finish();
 
+                                                            }
+
+                                                        }
+                                                        break;
+                                                    default:
+                                                        break;
+                                                }
+                                            } else {
+                                                Log.v("ininini", VoiceTag);
+                                                Log.v("i + 1", String.valueOf(i + 1));
+                                                Log.v("Function.length", String.valueOf(Function.length));
+                                                if (VoiceTag.equals("null") && (i + 1) == Function.length) {
+                                                    Log.v("ininini", "in");
+                                                    speak("不知道您要干嘛，不过我想过一段时间我就会懂了。", false, ctx);
+                                                    VoiceTag = "";
+
+                                                }
                                             }
                                         }
-                                    }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -674,20 +728,17 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
                     }//??????????????
                 }
 
+
+
+
+
+
     public void ChangeVolume(int streamType,int direction,int flages){
         AudioManager mAudioManager = (AudioManager) ctx.getSystemService(Context.AUDIO_SERVICE);
         mAudioManager.adjustStreamVolume(streamType, direction, flages);
     }
 
-    public String[] getParagraph(String inputString) {
-        char[] temp = new char[inputString.length()];
-        temp = inputString.toCharArray();
-        String[] paragraph = new String[temp.length];
-        for (int i = 0; i < inputString.length(); i++) {
-            paragraph[i] = String.valueOf(temp[i]);
-        }
-        return paragraph;
-    }
+
 
     public  void Jump(String Url){
         Bundle bundle = new Bundle();
@@ -876,6 +927,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
             resultBuffer.append(mIatResults.get(key));
         }
         SRResult=resultBuffer.toString();
+        Activity activityContext = (Activity)ctx;
         if(isLast==true){
             speak(SRResult, true,ctx);
             //????????
@@ -1076,5 +1128,7 @@ public class OnlineSpeechAction implements AdapterView.OnItemClickListener,View.
         info.setText(str);
         info.show();
     }
+
+
 
 }
